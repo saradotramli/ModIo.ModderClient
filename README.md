@@ -1,13 +1,13 @@
 - Download the latest release (publish.zip) from https://github.com/saradotramli/ModIo.ModderClient/releases/
-- Unzip publish.zip into a folder of your choice
-- Navigate to the folder where the contents were unzipped and run `ModIoModderClient.application`
+- Extract publish.zip into a folder of your choice
+- Navigate to the folder where the contents were extracted and run `ModIoModderClient.application`
 - When prompted, agree to install the application
-- After installation is complete, the application requires your mod.io Auth Token to be configured before it can be run
-- Using Windows Search search for ModIoModderClient.exe and locate the installation folder. This would typically be located a few folders deep within this folder `"C:\Users\<UserName>\AppData\Local\Apps\"`
+- After installation is complete, the application requires your mod.io account's Auth Token to be configured before it can be run
+- Using `Windows Search`, search for `ModIoModderClient.exe` and locate the installation folder. This would typically be located a few folders deep within this folder `"C:\Users\<UserName>\AppData\Local\Apps\"`
 - For e.g. `"C:\Users\<UserName>\AppData\Local\Apps\2.0\NV3Q3QXD.8J4\31NDZH3D.C2D\modi...exe_0000000000000000_0001.0000_none_aae92771ba966b2c"`
 - Once you open this folder you'll find a file `"appsettings.json"` at the same level as `"ModIoModderClient.exe"`
 - Open `"appsettings.json"` using any text editor and you'll find the mod.io Auth Token to be empty like this `"modioAuthToken": ""`
-- Generate/Get your account's auth token from mod.io. Navigate to https://mod.io/oauth/widget, provide a token name, say `"ModIoModderClientToken"`, select `"Read+Write"`, `"games-306"` and click on `"Create Token"`. Copy and backup this token elsewhere as it cannot be recovered later.
+- Generate an auth token for your account from mod.io. Navigate to https://mod.io/oauth/widget, provide a token name, say `"ModIoModderClientToken"`, select `"Read+Write"`, `"games-306"` and click on `"Create Token"`. Copy and backup this token elsewhere as it cannot be recovered later. Don't be alarmed though, as in case the token is lost, we can always generate a new one.
 - Paste the generated token in appsettings.json within the empty quotes. `"modioAuthToken": "<YourAuthTokenFromModIoGoesHere>"`
 - Save appsettings.json, close the file and (re)start the app.
 - You should see a list of all your mods in a dropdown list.
@@ -15,11 +15,11 @@
 - Click on `"Add Files"` button to select and upload new files for the Mod
 - Using the `"..."` browse button point to the folder which has all the `.zip` files created by SnowRunner's `Pack Mo`d feature.
 - A grid would then list all .zip files found in that folder and tries to guess the platform for which each .zip is built
-- The `Version` and `Changelog` details can either be provided at each file level or as a common value for all files being uploaded. If both are provided, the file level values will take precedence.
+- The `Version` and `Changelog` details can either be provided at each file level or as a common value for all files being uploaded. If details are provided at both levels, the file level values will take precedence.
 - Use the checkboxes in `"Upload?"` column to select the files that have to be uploaded
 - Finally when you are ready to upload, click on `"Upload File(s)"` button to begin upload
 - The Upload Status column should indicate the status for each file (Pending -> In-Progress -> Uploaded/Failed)
 - If the Upload fails due to network being slow, you can bump up the `"httpTimeOutInMins"` value in `appsettings.json` from the default 2 minutes 
 - Once the Upload is complete, you can close the Upload Window and the Mod's file list should auto-refresh to show you the latest file list
-- You can also choose to delete a mod file using the `"Delete (X)"` button from here. Mod.io will reject deletions for files marked as Active.
-
+- You can also choose to delete a mod file using the `"Delete (X)"` button from here. Mod.io will reject deletions for files marked as Active though.
+- Please try this tool with a dummy hidden mod and once you find it working fine and to your satisfaction, use it for a live mod.
